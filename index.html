@@ -1,56 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de CEP</title>
-    <script type="text/javascript" src="./jquery.js"></script>
-    <script type="text/javascript" src="./main.js"></script>
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/favicon.svg">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Infocep</title>
 </head>
-<body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-        <a class="navbar-brand" href="#">Consulta de CEP</a>
-          <div class="d-flex">
-            <input class="form-control me-2" type="text"  placeholder="Digite o seu CEP..." id="cep-input">
-            <button class="btn btn-outline-success" onclick="consultar()">Consultar</button>
-          </div>
+
+<body class="gradient">
+
+    <header>
+        <img src="./img/logo.svg" id="logo" alt="Infocep">
+
+        <section class="banner">
+            <div class="banner-text">
+                <h3>Busque informações
+                    do seu endereço.</h3>
+
+                <div class="search-content">
+                    <input type="number" name="cep-box" id="cep-box" placeholder="Digite o seu CEP..." maxlength="8"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    <button onclick="consultar()">Buscar</button>
+                </div>
+                <span class="feedback"></span>
+            </div>
+
+            <img src="./img/capa.webp" class="banner-img" alt="Localização">
+        </section>
+
+
+    </header>
+
+    <main>
+
+        <div class="table-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>CEP</th>
+                        <th id="cep"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Logradouro</td>
+                        <td id="logradouro"></td>
+                    </tr>
+                    <tr>
+                        <td>Bairro</td>
+                        <td id="bairro"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Cidade</td>
+                        <td id="cidade"></td>
+                    </tr>
+
+                    <tr>
+                        <td>UF</td>
+                        <td id="uf"></td>
+                    </tr>
+
+                    <tr>
+                        <td>IBGE</td>
+                        <td id="ibge"></td>
+                    </tr>
+
+                    <tr>
+                        <td>DDD</td>
+                        <td id="ddd"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-      </nav>
 
-     <table class="table" style="margin-top: 50px;">
-        <thead class="table-dark">
-        <th>CEP</th>
-        <td id="meu-cep"></td>
-        <td></td>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Logradouro</td>
-                <td id="logradouro"></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td>Bairro</td>
-                <td id="bairro"></td>
-                <td></td>
-            </tr>
+    </main>
 
-            <tr>
-                <td>Localidade</td>
-                <td id="localidade"></td>
-                <td></td>
-            </tr>
+    <button id="top-btn" onclick="toTop()"><img src="./img/arrow_top.svg" alt=""></button>
 
-            <tr>
-                <td>UF</td>
-                <td id="uf"></td>
-                <td></td>
-            </tr>
-        
-        </tbody>
-      </table>
+    <footer>
+        <p>Infocepe © Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
