@@ -12,4 +12,4 @@ Criar um sistema onde, a partir da inserção de um CEP, é retornado ao usuári
 
 ## Link do website 🌎
 
-https://infocep.netlify.app/
+https://rafael-vaz.github.io/infocep/
